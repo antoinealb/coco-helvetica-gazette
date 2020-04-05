@@ -172,8 +172,8 @@ msgstr "Ich sende"
 #~ msgid "arts"
 #~ msgstr "kunst"
 
-#~ msgid "Un humain"
-#~ msgstr "ein Mensch"
+# msgid "Un humain"
+# msgstr "ein Mensch"
 
-#~ msgid "Ni vieux ni jeune"
-#~ msgstr "nicht alt nicht jung"
+# msgid "Ni vieux ni jeune"
+# msgstr "nicht alt nicht jung"
