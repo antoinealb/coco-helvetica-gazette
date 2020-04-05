@@ -35,6 +35,8 @@ class TextTestimonial(models.Model):
         return reverse("article", kwargs={"pk": self.pk})
 
     def color(self):
-        colors = [""] * 2 + ["bg-color-" + s for s in ["orange", "salmon", "blue","marron"]]
+        colors = [""] * 2 + [
+            "bg-color-" + s for s in ["orange", "salmon", "blue", "marron"]
+        ]
         idx = crc32(self.text.encode()) % len(colors)
         return colors[idx]
