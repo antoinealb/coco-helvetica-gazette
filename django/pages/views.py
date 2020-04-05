@@ -24,9 +24,9 @@ class HomePageView(ListView):
     def get_queryset(self):
         filter_val = self.request.GET.get("date")
         if not filter_val:
-            return self.model.objects.all().order_by('-pk')
+            return self.model.objects.all().order_by("-pk")
         else:
-            return self.model.objects.filter(creation_date=filter_val).order_by('-pk')
+            return self.model.objects.filter(creation_date=filter_val).order_by("-pk")
 
 
 class ArticleView(DetailView):
@@ -43,7 +43,9 @@ class ByTagView(ListView):
         return context
 
     def get_queryset(self):
-        return TextTestimonial.objects.filter(tags__pk=self.kwargs["pk"]).order_by('-pk')
+        return TextTestimonial.objects.filter(tags__pk=self.kwargs["pk"]).order_by(
+            "-pk"
+        )
 
 
 def manage_articles(request):
