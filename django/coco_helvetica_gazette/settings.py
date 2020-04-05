@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = "b_5_6=(pb!vaecdol=x0kjx)hoh==fcfq39%%_v@j2y)uf%j%6"
 
 if os.getenv("GAE_INSTANCE"):
-    DEBUG = True
+    DEBUG = False
     SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
 else:
     DEBUG = True
