@@ -46,5 +46,6 @@ class ByTagView(ListView):
 def manage_articles(request):
     if request.method == "POST":
         form = ArticleCreate(request.POST, request.FILES)
-        form.save()
+        if form.is_valid():
+            form.save()
     return redirect("home")
