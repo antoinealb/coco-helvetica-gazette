@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-05 14:11+0200\n"
+"POT-Creation-Date: 2020-04-05 16:55+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,6 +30,10 @@ msgstr ""
 msgid "Italian"
 msgstr ""
 
+#: coco_helvetica_gazette/settings.py:111
+msgid "English"
+msgstr ""
+
 #: pages/models.py:9
 msgid "Autre"
 msgstr ""
@@ -43,43 +47,43 @@ msgid "Femme"
 msgstr ""
 
 #: pages/tags.py:4
-msgid "personnel santé"
+msgid "Personnel Santé"
 msgstr ""
 
 #: pages/tags.py:5
-msgid "alimentaire"
+msgid "Secteur Alimentaire"
 msgstr ""
 
 #: pages/tags.py:6
-msgid "éducation"
+msgid "Education"
 msgstr ""
 
 #: pages/tags.py:7
-msgid "télétravail"
+msgid "Télétravail"
 msgstr ""
 
 #: pages/tags.py:8
-msgid "sécurité"
+msgid "Sécurité"
 msgstr ""
 
 #: pages/tags.py:9
-msgid "transport"
+msgid "Transport"
 msgstr ""
 
 #: pages/tags.py:10
-msgid "étudiant"
+msgid "Etudiant"
 msgstr ""
 
 #: pages/tags.py:11
-msgid "sport"
+msgid "Sport"
 msgstr ""
 
 #: pages/tags.py:12
-msgid "voyage"
+msgid "Voyage"
 msgstr ""
 
 #: pages/tags.py:13
-msgid "art & culture"
+msgid "Art & Culture"
 msgstr ""
 
 #: pages/tags.py:14
@@ -87,65 +91,57 @@ msgid "cuisine"
 msgstr ""
 
 #: pages/tags.py:15
-msgid "nature & environnement"
+msgid "Nature & Environnement"
 msgstr ""
 
 #: pages/tags.py:16
-msgid "famille"
+msgid "Famille"
 msgstr ""
 
 #: pages/tags.py:17
-msgid "amitié"
+msgid "Amitié"
 msgstr ""
 
 #: pages/tags.py:18
-msgid "amour"
+msgid "Amour"
 msgstr ""
 
 #: pages/tags.py:19
-msgid "solitude"
+msgid "Confinement"
 msgstr ""
 
 #: pages/tags.py:20
-msgid "confinement"
+msgid "Motivation"
 msgstr ""
 
 #: pages/tags.py:21
-msgid "positivité"
+msgid "Humour"
 msgstr ""
 
 #: pages/tags.py:22
-msgid "motivation"
+msgid "Actualités"
 msgstr ""
 
 #: pages/tags.py:23
-msgid "humour"
+msgid "Covid Positif"
 msgstr ""
 
-#: pages/tags.py:24
-msgid "actualités"
-msgstr ""
-
-#: pages/tags.py:25
-msgid "covid+"
-msgstr ""
-
-#: templates/pages/home.html:65
+#: templates/pages/home.html:46
 msgid "Moi, pendant le confinement..."
 msgstr ""
 
-#: templates/pages/home.html:71
+#: templates/pages/home.html:52
 msgid "J'écris la gazette!"
 msgstr ""
 
-#: templates/pages/home.html:74
+#: templates/pages/home.html:55
 msgid "Je suis..."
 msgstr ""
 
-#: templates/pages/home.html:83
+#: templates/pages/home.html:64
 msgid "Mon âge:"
 msgstr ""
 
-#: templates/pages/home.html:86
+#: templates/pages/home.html:67
 msgid "J'envoie!"
 msgstr ""
