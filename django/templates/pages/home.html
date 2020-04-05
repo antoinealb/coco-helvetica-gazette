@@ -104,7 +104,7 @@ $('.form-group').each(function(){
         {% for testimonial in object_list %}
             <div class="card {{ testimonial.color }}">
                 <div class="card-body">
-                    <p class="card-text">{{ testimonial.text }}</p>
+                    <p class="card-text">{{ testimonial.text|linebreaks }}</p>
                     <small class="text-muted">
                         <p class="card-text">
                         {{ testimonial.creation_date|localize }}, {{ testimonial.get_author_gender_display|default:"Un humain" }}, {{ testimonial.author_age|default:"Ni vieux ni jeune" }}
