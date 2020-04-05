@@ -15,13 +15,13 @@
                         {{ object.creation_date }}, {{ object.get_author_gender_display|default:"Un humain" }}, {{ testimonial.author_age|default:"Ni vieux ni jeune" }}
                     {% for tag in object.tags.all %}
                         <b><a href="{% url 'by_tag' tag.id %}">#{{ tag }}</a> </b>
-                    {% endfor %} 
+                    {% endfor %}
                     </p>
                 </small>
             </p>
         </div></div>
 
-<a href='{% url "home" %}'><h3 class="mt-5">retour</h3></a>
+<a href='{% url "home" %}' style="color: #212529;"><h3 class="mt-5">retour</h3></a>
 
 </p>
 </div>

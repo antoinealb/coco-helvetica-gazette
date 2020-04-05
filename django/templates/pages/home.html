@@ -11,9 +11,9 @@
             <div class="card-body">
                 {% if tag %}
                     <h1>#{{ tag }}</h1>
-                    <a href='{% url "home" %}'><h3>retour</h3></a>
+                    <a href='{% url "home" %}' style="color: #212529;"><h3>retour</h3></a>
                 {% else %}
-                <a href="{% url 'home' %}"><h1>Coco Helvetica Gazette</h1></a>
+                <a href="{% url 'home' %}" style="color: #212529;"><h1>Coco Helvetica Gazette</h1></a>
                 {% endif %}
             </div>
         </div>
