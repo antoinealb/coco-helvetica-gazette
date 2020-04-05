@@ -4,6 +4,7 @@ from .models import TextTestimonial, Tag
 from django.forms import ModelForm
 import re
 
+
 class ArticleCreate(ModelForm):
     class Meta:
         model = TextTestimonial
