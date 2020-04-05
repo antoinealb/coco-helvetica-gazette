@@ -11,7 +11,7 @@ ALLOWED_TAGS = [
     ("Sport", _("Sport")),
     ("Voyage", _("Voyage")),
     ("Art & Culture", _("Art & Culture")),
-    ("Cuisine", _("cuisine")),
+    ("Cuisine", _("Cuisine")),
     ("Nature & Environnement", _("Nature & Environnement")),
     ("Famille", _("Famille")),
     ("Amitié", _("Amitié")),
