@@ -49,6 +49,6 @@ def manage_articles(request):
     if request.method == "POST":
         form = ArticleCreate(request.POST)
         if form.data["text"]:
-            if len(re.findall('http[s]?://', form.data["text"])) == 0:
+            if len(re.findall("http[s]?://", form.data["text"])) == 0:
                 form.save()
     return redirect("home")
