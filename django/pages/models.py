@@ -22,7 +22,7 @@ class Tag(models.Model):
 class TextTestimonial(models.Model):
     text = models.TextField()
     creation_date = models.DateField(auto_now_add=True)
-    tags = models.ManyToManyField(Tag)
+    tags = models.ManyToManyField(Tag, blank=True)
     author_age = models.IntegerField(blank=True, null=True)
     author_gender = models.CharField(
         max_length=1, choices=GENDERS, null=True, blank=True, default="O"

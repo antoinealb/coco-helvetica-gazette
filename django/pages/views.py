@@ -1,11 +1,13 @@
 from django.shortcuts import get_object_or_404, redirect
 from django.views.generic import ListView, DetailView
 from .models import TextTestimonial, Tag
-from django.forms import modelform_factory
+from django.forms import ModelForm
 
-ArticleCreate = modelform_factory(
-    TextTestimonial, fields=["text", "author_gender", "author_age", "tags"]
-)
+
+class ArticleCreate(ModelForm):
+    class Meta:
+        model = TextTestimonial
+        fields = ["text", "author_gender", "author_age", "tags"]
 
 
 class HomePageView(ListView):
@@ -45,7 +47,7 @@ class ByTagView(ListView):
 
 def manage_articles(request):
     if request.method == "POST":
-        form = ArticleCreate(request.POST, request.FILES)
-        if form.is_valid():
+        form = ArticleCreate(request.POST)
+        if form.data["text"]:
             form.save()
     return redirect("home")
