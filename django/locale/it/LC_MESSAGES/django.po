@@ -20,132 +20,124 @@ msgstr ""
 
 #: coco_helvetica_gazette/settings.py:108
 msgid "German"
-msgstr ""
+msgstr "Tedesco"
 
 #: coco_helvetica_gazette/settings.py:109
 msgid "French"
-msgstr ""
+msgstr "Francese"
 
 #: coco_helvetica_gazette/settings.py:110
 msgid "Italian"
-msgstr ""
+msgstr "Italiano"
 
 #: pages/models.py:9
 msgid "Autre"
-msgstr ""
+msgstr "Altro"
 
 #: pages/models.py:10
 msgid "Homme"
-msgstr ""
+msgstr "Signor"
 
 #: pages/models.py:11
 msgid "Femme"
-msgstr ""
+msgstr "Signora"
 
 #: pages/tags.py:4
-msgid "personnel santé"
-msgstr ""
+msgid "Personnel Santé"
+msgstr "Personale Sanitario"
 
 #: pages/tags.py:5
-msgid "alimentaire"
-msgstr ""
+msgid "Secteur Alimentaire"
+msgstr "Settore Alimentare"
 
 #: pages/tags.py:6
-msgid "éducation"
-msgstr ""
+msgid "Education"
+msgstr "Educazione"
 
 #: pages/tags.py:7
-msgid "télétravail"
-msgstr ""
+msgid "Télétravail"
+msgstr "Telelavoro"
 
 #: pages/tags.py:8
-msgid "sécurité"
-msgstr ""
+msgid "Sécurité"
+msgstr "Sicurezza"
 
 #: pages/tags.py:9
-msgid "transport"
-msgstr ""
+msgid "Transport"
+msgstr "Transporto"
 
 #: pages/tags.py:10
-msgid "étudiant"
-msgstr ""
+msgid "Etudiant"
+msgstr "Studente"
 
 #: pages/tags.py:11
-msgid "sport"
-msgstr ""
+msgid "Sport"
+msgstr "Sport"
 
 #: pages/tags.py:12
-msgid "voyage"
-msgstr ""
+msgid "Voyage"
+msgstr "Viaggi"
 
 #: pages/tags.py:13
-msgid "art & culture"
-msgstr ""
+msgid "Art & Culture"
+msgstr "Arte & Cultura"
 
 #: pages/tags.py:14
-msgid "cuisine"
-msgstr ""
+msgid "Cuisine"
+msgstr "Cucina"
 
 #: pages/tags.py:15
-msgid "nature & environnement"
-msgstr ""
+msgid "Nature & Environnement"
+msgstr "Natura & Ambiente"
 
 #: pages/tags.py:16
-msgid "famille"
-msgstr ""
+msgid "Famille"
+msgstr "Famiglia"
 
 #: pages/tags.py:17
-msgid "amitié"
-msgstr ""
+msgid "Amitié"
+msgstr "Amicizia"
 
 #: pages/tags.py:18
-msgid "amour"
-msgstr ""
+msgid "Amour"
+msgstr "Amore"
 
 #: pages/tags.py:19
-msgid "solitude"
-msgstr ""
+msgid "Confinement"
+msgstr "Isolamento"
 
 #: pages/tags.py:20
-msgid "confinement"
-msgstr ""
+msgid "Motivation"
+msgstr "Motivazione"
 
 #: pages/tags.py:21
-msgid "positivité"
-msgstr ""
+msgid "Humour"
+msgstr "Umorismo"
 
 #: pages/tags.py:22
-msgid "motivation"
-msgstr ""
+msgid "Actualités"
+msgstr "Attualità"
 
 #: pages/tags.py:23
-msgid "humour"
-msgstr ""
-
-#: pages/tags.py:24
-msgid "actualités"
-msgstr ""
-
-#: pages/tags.py:25
-msgid "covid+"
-msgstr ""
+msgid "Covid Positif"
+msgstr "Covid Positivo"
 
 #: templates/pages/home.html:65
 msgid "Moi, pendant le confinement..."
-msgstr ""
+msgstr "Io, durante l'isolamento..."
 
 #: templates/pages/home.html:71
 msgid "J'écris la gazette!"
-msgstr ""
+msgstr "Scribo la Gazzetta!"
 
 #: templates/pages/home.html:74
 msgid "Je suis..."
-msgstr ""
+msgstr "Sono..."
 
 #: templates/pages/home.html:83
 msgid "Mon âge:"
-msgstr ""
+msgstr "Età:"
 
 #: templates/pages/home.html:86
 msgid "J'envoie!"
-msgstr ""
+msgstr "Inviare"
