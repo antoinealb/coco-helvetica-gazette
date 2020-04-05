@@ -1,3 +1,23 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+$('.form-group').each(function(){    
+    var select = $(this), values = {};    
+    $('option',select).each(function(i, option){
+        values[option.value] = option.selected;        
+    }).click(function(event){        
+        values[this.value] = !values[this.value];
+        $('option',select).each(function(i, option){            
+            option.selected = values[option.value];        
+        });    
+    });
+});
+});
+
+
+</script>
+
+
 {% extends 'base.html' %}
 {% load static %}
 {% load i18n %}
@@ -60,7 +80,7 @@
                                 {% endfor %}
                             </select>
                         </div>
-                        <div class="form-group">
+                        <div class="select-toggle">
                             <label for="id_age">{% trans "Mon âge:" %}</label>
                             <input name="author_age" type="number" min="0" class="form-control" id="id_age">
                         </div>
