@@ -2,7 +2,7 @@ from django.shortcuts import get_object_or_404, redirect
 from django.views.generic import ListView, DetailView
 from .models import TextTestimonial, Tag
 from django.forms import ModelForm
-
+import re
 
 class ArticleCreate(ModelForm):
     class Meta:
