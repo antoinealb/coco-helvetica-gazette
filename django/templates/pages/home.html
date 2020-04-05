@@ -35,7 +35,7 @@
                                                            alt="calendar image">
                         </div>
                     </div>
-                    <input type="text" class="form-control datepicker" data-date-format="dd/mm/yyyy" placeholder={% now "d/m/Y" %}>
+                    <input type="text" class="form-control datepicker" data-format="dd/mm/yyyy" placeholder={% now "d/m/Y" %}>
                 </div>
             </div>
         </div>
@@ -95,9 +95,11 @@
 {% block javascript %}
     {{ block.super }}
     <script type="text/javascript">
-        $('.datepicker').datepicker();
+        $('.datepicker').datepicker({
+            todayHighlight: true,
+            weekStart: 1,
+            format:"yyyy-mm-dd"});
         $('.datepicker').on("changeDate", function(ev){
-            console.log(ev.date.toISOString());
             window.location.href="{% url 'home' %}?date=" + ev.date.toISOString().substr(0,10);
         });
     </script>
