@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-05 14:06+0200\n"
+"POT-Creation-Date: 2020-04-05 16:55+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,6 +29,10 @@ msgstr "Francese"
 #: coco_helvetica_gazette/settings.py:110
 msgid "Italian"
 msgstr "Italiano"
+
+#: coco_helvetica_gazette/settings.py:111
+msgid "English"
+msgstr ""
 
 #: pages/models.py:9
 msgid "Autre"
@@ -83,7 +87,9 @@ msgid "Art & Culture"
 msgstr "Arte & Cultura"
 
 #: pages/tags.py:14
-msgid "Cuisine"
+#, fuzzy
+#| msgid "Cuisine"
+msgid "cuisine"
 msgstr "Cucina"
 
 #: pages/tags.py:15
@@ -122,22 +128,22 @@ msgstr "Attualità"
 msgid "Covid Positif"
 msgstr "Covid Positivo"
 
-#: templates/pages/home.html:65
+#: templates/pages/home.html:46
 msgid "Moi, pendant le confinement..."
 msgstr "Io, durante l'isolamento..."
 
-#: templates/pages/home.html:71
+#: templates/pages/home.html:52
 msgid "J'écris la gazette!"
 msgstr "Scribo la Gazzetta!"
 
-#: templates/pages/home.html:74
+#: templates/pages/home.html:55
 msgid "Je suis..."
 msgstr "Sono..."
 
-#: templates/pages/home.html:83
+#: templates/pages/home.html:64
 msgid "Mon âge:"
 msgstr "Età:"
 
-#: templates/pages/home.html:86
+#: templates/pages/home.html:67
 msgid "J'envoie!"
 msgstr "Inviare"

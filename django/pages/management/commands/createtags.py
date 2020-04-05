@@ -14,4 +14,4 @@ class Command(BaseCommand):
             self.stdout.write("- " + t)
 
         for t, _ in ALLOWED_TAGS:
-            Tag.objects.create(name=t.lower())
+            Tag.objects.create(name=t)
