@@ -22,12 +22,18 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "b_5_6=(pb!vaecdol=x0kjx)hoh==fcfq39%%_v@j2y)uf%j%6"
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+if os.getenv("GAE_INSTANCE"):
+    DEBUG = True
+    SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
+else:
+    DEBUG = True
 
-# WARNING: This is the dev instance
-DEV_HOSTS = ["localhost", "127.0.0.1", "[::1]"]
-ALLOWED_HOSTS = ["coco.antoinealb.net"] + DEV_HOSTS
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "[::1]"]
+ALLOWED_HOSTS += [
+    "coco.antoinealb.net",
+    "coco-helvetica-gazette.appspot.com",
+    ".coco-helvetica-gazette.ch",
+]
 
 
 # Application definition
@@ -85,6 +91,29 @@ except KeyError:
 
 DATABASES = {"default": {"ENGINE": "django.db.backends.sqlite3", "NAME": db_name}}
 
+if os.getenv("GAE_INSTANCE"):
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": os.getenv("DJANGO_DB_NAME"),
+            "USER": os.getenv("DJANGO_DB_USER"),
+            "HOST": os.getenv("DJANGO_DB_HOST"),
+            "PASSWORD": os.getenv("DJANGO_DB_PASSWORD"),
+            "PORT": "5432",
+        }
+    }
+elif os.getenv("CLOUD_PROXY"):
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": "coco",
+            "USER": "app",
+            "PASSWORD": os.environ["CLOUD_PROXY_PASSWORD"],
+            "PORT": "5432",
+            "HOST": "127.0.0.1",
+        }
+    }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -125,13 +154,25 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = "/static/"
-LOCALE_PATHS = [os.path.join(BASE_DIR, "locale")]
+if os.getenv("GAE_INSTANCE"):
+    STATIC_URL = "https://storage.googleapis.com/coco-helvetica-gazette-static/static/"
+else:
+    STATIC_URL = "/static/"
+
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
+LOCALE_PATHS = [os.path.join(BASE_DIR, "locale")]
 
 STATICFILES_FINDERS = [
     "compressor.finders.CompressorFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 ]
 
+# TODO(antoinealb): Enable compression
+COMPRESS_ENABLED = False
 COMPRESS_PRECOMPILERS = (("text/x-scss", "django_libsass.SassCompiler"),)
+
+# Enable redirect to https on Google App Engine
+if os.getenv("GAE_INSTANCE"):
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    SECURE_SSL_REDIRECT = True
+    PREPEND_WWW = True

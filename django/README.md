@@ -19,7 +19,7 @@ Docker
 
 ```
 docker build -t coco .
-docker run -it -p 8000:80 --name coco coco
+docker run -it -p 8000:80 --name coco coco python manage.py runserver
 ```
 
 To run the migrations:
@@ -58,4 +58,32 @@ Run the python dev server
     python manage.py runserver
 
 Then open this link in your browser to see the project in action [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+
+
+# Deploying on Google App Engine
+
+## Registering application secrets
+
+Create a file named `credentials.yaml` with the following content:
+
+```yml
+env_variables:
+  DJANGO_SECRET_KEY:
+  DJANGO_DB_HOST:
+  DJANGO_DB_NAME:
+  DJANGO_DB_USER:
+  DJANGO_DB_PASSWORD:
+```
+
+and fill in the values with the chosen secrets.
+
+## Deploy static files to Google Cloud Storage
+
+```python
+python manage.py collectstatic
+gsutil rsync -R static/ gs://coco-helvetica-gazette-static/static
+```
+
+
+
 

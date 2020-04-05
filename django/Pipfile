@@ -8,6 +8,9 @@ django = "==3.0"
 flake8 = "*"
 django-compressor = "*"
 django-libsass = "*"
+psycopg2 = "==2.8.4"
+psycopg2-binary = "==2.8.4"
+gunicorn = "*"
 
 [dev-packages]
 

@@ -23,6 +23,4 @@ RUN django-admin compilemessages
 
 COPY . /app
 
-# TODO: Switch this to a real server like Gunicorn + Nginx for static files
-CMD python3 manage.py runserver 0.0.0.0:80
-
+CMD gunicorn --bind 0.0.0.0:8080 coco_helvetica_gazette.wsgi

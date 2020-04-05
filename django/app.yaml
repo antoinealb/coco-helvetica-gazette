@@ -1,0 +1,8 @@
+runtime: custom
+env: flex
+
+includes:
+  - credentials.yaml
+
+beta_settings:
+  cloud_sql_instances: "coco-helvetica-gazette:europe-west6:coco-prod"
