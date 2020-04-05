@@ -100,7 +100,7 @@
             weekStart: 1,
             format:"yyyy-mm-dd"});
         $('.datepicker').on("changeDate", function(ev){
-            window.location.href="{% url 'home' %}?date=" + ev.date.toISOString().substr(0,10);
+            window.location.href="{% url 'home' %}?date=" + ev.date.getFullYear() + "-" + (ev.date.getMonth() + 1) + "-" + ev.date.getDate()
         });
     </script>
 {% endblock %}
