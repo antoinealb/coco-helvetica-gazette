@@ -4,7 +4,7 @@ from .models import TextTestimonial, Tag
 from django.forms import modelform_factory
 
 ArticleCreate = modelform_factory(
-    TextTestimonial, fields=["text", "author_gender", "author_age"]
+    TextTestimonial, fields=["text", "author_gender", "author_age", "tags"]
 )
 
 
