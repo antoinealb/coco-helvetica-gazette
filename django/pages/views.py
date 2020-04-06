@@ -2,6 +2,7 @@ from django.shortcuts import get_object_or_404, redirect
 from django.views.generic import ListView, DetailView, TemplateView
 from .models import TextTestimonial, Tag
 from django.forms import ModelForm
+from . import telegram
 import re
 
 
@@ -58,4 +59,6 @@ def manage_articles(request):
         if form.is_valid() and form.data["text"]:
             if len(re.findall("http[s]?://", form.data["text"])) == 0:
                 form.save()
+                text = form.data["text"]
+                telegram.send_text(text)
     return redirect("home")

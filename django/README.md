@@ -73,6 +73,9 @@ env_variables:
   DJANGO_DB_NAME:
   DJANGO_DB_USER:
   DJANGO_DB_PASSWORD:
+  # Optional, for telegram bot notifications
+  TELEGRAM_CHAT_ID:
+  TELEGRAM_API_KEY:
 ```
 
 and fill in the values with the chosen secrets.
