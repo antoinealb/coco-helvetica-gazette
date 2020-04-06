@@ -1,21 +1,3 @@
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function() {
-$('.form-group').each(function(){    
-    var select = $(this), values = {};    
-    $('option',select).each(function(i, option){
-        values[option.value] = option.selected;        
-    }).click(function(event){        
-        values[this.value] = !values[this.value];
-        $('option',select).each(function(i, option){            
-            option.selected = values[option.value];        
-        });    
-    });
-});
-});
-
-
-</script>
 
 
 {% extends 'base.html' %}
@@ -28,40 +10,41 @@ $('.form-group').each(function(){
 {% block content %}
     <div class="row">
         <div class="col-4">
-            <div class="card-body">
-                {% if tag %}
-                    <h1>#{{ tag }}</h1>
-                    <a href='{% url "home" %}' style="color: #212529;"><h3>retour</h3></a>
-                {% else %}
-                <a href="{% url 'home' %}" style="color: #212529;"><h1>Coco Helvetica Gazette</h1></a>
-                {% endif %}
-            </div>
         </div>
         <div class="col-8">
-            <div id="filters">
-                <div class="input-group mb-2 mr-sm-2">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text">#</div>
-                    </div>
-                    <select class="form-control" onChange="window.location.href=this.value">
-                        {% for tag in tags %}
-                            <option value="{% url 'by_tag' tag.id %}">{{ tag }}</option>
-                        {% endfor %}
-                    </select>
-                </div>
-                <div class="input-group mb-2 mr-sm-2">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text"><img src="{% static 'icons/calendar.svg' %}"
-                                                           alt="calendar image">
-                        </div>
-                    </div>
-                    <input type="text" class="form-control datepicker" placeholder={% now "d/m/Y" %}>
-                </div>
-            </div>
+            <div id="filters"></div>
         </div>
     </div>
     <div class="card-columns">
-        <div class="card bg-light mr-sm-1 mb-5">
+        <div class="card border-light">
+            <a href="{% url 'home' %}" style="color: #212529;"><img class="img-fluid" src="{% static 'logo.png' %}" alt="Coco Helvetica Gazette" /></a>
+        </div>
+        <div class="card bg-light mr-sm-1 mb-3">
+            <div class="card-header">
+                {% trans 'Recherche' %}
+            </div>
+            <div class="card-body">
+            <div class="input-group mb-2 mr-sm-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">#</div>
+                </div>
+                <select class="form-control" onChange="window.location.href=this.value">
+                    {% for tag in tags %}
+                        <option value="{% url 'by_tag' tag.id %}">{{ tag }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="input-group mb-2 mr-sm-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text"><img src="{% static 'icons/calendar.svg' %}"
+                                                       alt="calendar image">
+                    </div>
+                </div>
+                <input type="text" class="form-control datepicker" placeholder={% now "d/m/Y" %}>
+            </div>
+            </div>
+        </div>
+        <div class="card bg-light mr-sm-1 mb-3">
             <div class="card-body">
                 <p class="card-text">{% trans "Moi, pendant le confinement..." %}</p>
                 <p class="card-text">
@@ -85,10 +68,10 @@ $('.form-group').each(function(){
                             <input name="author_age" type="number" min="0" class="form-control" id="id_age">
                         </div>
                         <div class="form-group">
-                            <label for="id_tag">{% trans "#." %}</label>
+                            <label for="id_tag">Tag</label>
                             <select class="form-control" id="id_tagr" name="tags" multiple>
                                 {% for k,v in ArticleCreate.tags.field.choices|slice:"1:" %}
-                                    <option value="{{ k }}">{{ v }}</option>
+                                    <option value="{{ k }}">#{{ v }}</option>
                                     {{ k }}
                                 {% endfor %}
                             </select>
@@ -97,8 +80,6 @@ $('.form-group').each(function(){
                     </form>
                     </form>
                 </small>
-                </p>
-                </p>
             </div>
         </div>
         {% for testimonial in object_list %}
@@ -107,13 +88,13 @@ $('.form-group').each(function(){
                     <p class="card-text">{{ testimonial.text|linebreaks }}</p>
                     <small class="text-muted">
                         <p class="card-text">
-                        {{ testimonial.creation_date|localize }}, {{ testimonial.get_author_gender_display|default:"Un humain" }}, {{ testimonial.author_age|default:"Ni vieux ni jeune" }}
+                        {{ testimonial.creation_date|localize }}, {{ testimonial.get_author_gender_display|default:_("Un humain") }}, {{ testimonial.author_age|default:_("Ni vieux ni jeune") }}
                         {% for tag in testimonial.tags.all %}
                             <b><a href="{% url 'by_tag' tag.id %}">#{{ tag }}</a> </b>
                         {% endfor %} -- <a href="{% url 'article' testimonial.pk %}">Permalink</a>
                         </p>
                     </small>
-                    </p>
+                </p>
                 </div>
             </div>
         {% endfor %}
@@ -128,8 +109,22 @@ $('.form-group').each(function(){
             todayHighlight: true,
             weekStart: 1,
             format:"yyyy-mm-dd"});
-        $('.datepicker').on("changeDate", function(ev){
-            window.location.href="{% url 'home' %}?date=" + ev.date.getFullYear() + "-" + (ev.date.getMonth() + 1) + "-" + ev.date.getDate()
+$('.datepicker').on("changeDate", function(ev){
+    window.location.href="{% url 'home' %}?date=" + ev.date.getFullYear() + "-" + (ev.date.getMonth() + 1) + "-" + ev.date.getDate()
+});
+
+$(document).ready(function() {
+    $('.form-group').each(function(){
+        var select = $(this), values = {};
+        $('option',select).each(function(i, option){
+            values[option.value] = option.selected;
+        }).click(function(event){
+            values[this.value] = !values[this.value];
+            $('option',select).each(function(i, option){
+                option.selected = values[option.value];
+            });
         });
+    });
+});
     </script>
 {% endblock %}
