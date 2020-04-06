@@ -4,7 +4,7 @@ from pages.models import TextTestimonial
 from pages.tags import ALLOWED_TAGS
 
 
-TEXT="""Il n'y avait pas un mot à répondre.
+TEXT = """Il n'y avait pas un mot à répondre.
 Je remontai dans ma chambre.  Graüben me suivit.
 Ce fut elle qui se chargea de mettre en ordre, dans une petite valise, les objets nécessaires à mon voyage.
 Elle n'était pas plus émue que s'il se fût agi d'une promenade à Lubeck ou à Heligoland; ses petites mains allaient et venaient sans précipitation; elle causait avec calme; elle me donnait les raisons les plus sensées en faveur de notre expédition.
