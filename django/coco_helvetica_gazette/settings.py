@@ -101,7 +101,7 @@ if os.getenv("GAE_INSTANCE"):
             "PORT": "5432",
         }
     }
-elif os.getenv("CLOUD_PROXY"):
+elif os.getenv("CLOUD_PROXY_PASSWORD"):
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.postgresql",
