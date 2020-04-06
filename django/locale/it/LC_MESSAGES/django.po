@@ -154,8 +154,8 @@ msgstr "Inviare"
 
 #: templates/pages/home.html:91
 msgid "Un humain"
-msgstr ""
+msgstr "Un umano"
 
 #: templates/pages/home.html:91
 msgid "Ni vieux ni jeune"
-msgstr ""
+msgstr "Né vecchio né giovane"
