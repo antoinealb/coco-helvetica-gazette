@@ -8,6 +8,7 @@ import re
 class AboutView(TemplateView):
     template_name = "pages/about.html"
 
+
 class ArticleCreate(ModelForm):
     class Meta:
         model = TextTestimonial
