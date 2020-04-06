@@ -81,9 +81,5 @@ and fill in the values with the chosen secrets.
 
 ```python
 python manage.py collectstatic
-gsutil rsync -R static/ gs://coco-helvetica-gazette-static/static
+gsutil rsync -R static_out/ gs://coco-helvetica-gazette-static/static
 ```
-
-
-
-

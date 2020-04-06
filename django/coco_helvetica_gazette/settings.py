@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "compressor",
     "pages.apps.PagesConfig",
 ]
 
@@ -143,12 +142,10 @@ LANGUAGES = [
 LANGUAGE_CODE = "fr"
 
 TIME_ZONE = "UTC"
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
+LOCALE_PATHS = [os.path.join(BASE_DIR, "locale")]
 
 
 # Static files (CSS, JavaScript, Images)
@@ -159,17 +156,11 @@ if os.getenv("GAE_INSTANCE"):
 else:
     STATIC_URL = "/static/"
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
-LOCALE_PATHS = [os.path.join(BASE_DIR, "locale")]
+STATIC_ROOT = os.path.join(BASE_DIR, "static_out")
 
-STATICFILES_FINDERS = [
-    "compressor.finders.CompressorFinder",
-    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
 ]
-
-# TODO(antoinealb): Enable compression
-COMPRESS_ENABLED = False
-COMPRESS_PRECOMPILERS = (("text/x-scss", "django_libsass.SassCompiler"),)
 
 # Enable redirect to https on Google App Engine
 if os.getenv("GAE_INSTANCE"):
