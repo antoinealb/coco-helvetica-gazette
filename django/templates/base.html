@@ -1,4 +1,4 @@
-{% load static %}
+{% load static i18n %}
 
 <!DOCTYPE html>
 
@@ -18,6 +18,14 @@
 <body>
     {% block content %}
     {% endblock %}
+
+    <div class="footer fixed-bottom">
+        <div class="container">
+            <a href="{% url 'about' %}">
+                <span class="text-muted">{% trans 'A propos de la Gazette' %}</span>
+            </a>
+        </div>
+    </div>
 
     {% block javascript %}
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

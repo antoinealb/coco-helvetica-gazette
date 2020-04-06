@@ -1,9 +1,12 @@
 from django.shortcuts import get_object_or_404, redirect
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, TemplateView
 from .models import TextTestimonial, Tag
 from django.forms import ModelForm
 import re
 
+
+class AboutView(TemplateView):
+    template_name = "pages/about.html"
 
 class ArticleCreate(ModelForm):
     class Meta:
