@@ -9,14 +9,14 @@ def send_text(text):
         logging.warning("No Telegram settings, aborting message send")
         return
 
-    url = 'https://api.telegram.org/bot{token}/sendMessage'
+    url = "https://api.telegram.org/bot{token}/sendMessage"
     url = url.format(token=settings.TELEGRAM_API_KEY)
 
     data = {
-        'chat_id': settings.TELEGRAM_CHAT_ID,
-        'parse_mode': 'Markdown',
+        "chat_id": settings.TELEGRAM_CHAT_ID,
+        "parse_mode": "Markdown",
     }
 
-    data['text'] = text
+    data["text"] = text
 
     requests.post(url, data=data)
