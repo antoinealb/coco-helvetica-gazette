@@ -40,7 +40,7 @@ msgstr "Andere"
 
 #: pages/models.py:10
 msgid "Homme"
-msgstr "Mensch"
+msgstr "Mann"
 
 #: pages/models.py:11
 msgid "Femme"
@@ -154,11 +154,11 @@ msgstr "Ich sende"
 
 #: templates/pages/home.html:91
 msgid "Un humain"
-msgstr "ein Mensch"
+msgstr "Ein Mensch"
 
 #: templates/pages/home.html:91
 msgid "Ni vieux ni jeune"
-msgstr ""
+msgstr "Weder alt noch jung"
 
 #~ msgid "santé"
 #~ msgstr "gesundheit"
