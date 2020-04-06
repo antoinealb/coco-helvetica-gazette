@@ -36,124 +36,124 @@ msgstr ""
 
 #: pages/models.py:9
 msgid "Autre"
-msgstr ""
+msgstr "Other"
 
 #: pages/models.py:10
 msgid "Homme"
-msgstr ""
+msgstr "Man"
 
 #: pages/models.py:11
 msgid "Femme"
-msgstr ""
+msgstr "Woman"
 
 #: pages/tags.py:4
 msgid "Personnel Santé"
-msgstr ""
+msgstr "Health Worker"
 
 #: pages/tags.py:5
 msgid "Secteur Alimentaire"
-msgstr ""
+msgstr "Food Industry"
 
 #: pages/tags.py:6
 msgid "Education"
-msgstr ""
+msgstr "Education"
 
 #: pages/tags.py:7
 msgid "Télétravail"
-msgstr ""
+msgstr "Home Office"
 
 #: pages/tags.py:8
 msgid "Sécurité"
-msgstr ""
+msgstr "Security"
 
 #: pages/tags.py:9
 msgid "Transport"
-msgstr ""
+msgstr "Transport"
 
 #: pages/tags.py:10
 msgid "Etudiant"
-msgstr ""
+msgstr "Student"
 
 #: pages/tags.py:11
 msgid "Sport"
-msgstr ""
+msgstr "Sport"
 
 #: pages/tags.py:12
 msgid "Voyage"
-msgstr ""
+msgstr "Travel"
 
 #: pages/tags.py:13
 msgid "Art & Culture"
-msgstr ""
+msgstr "Art & Culture"
 
 #: pages/tags.py:14
 msgid "Cuisine"
-msgstr ""
+msgstr "Cooking"
 
 #: pages/tags.py:15
 msgid "Nature & Environnement"
-msgstr ""
+msgstr "Nature & Environment"
 
 #: pages/tags.py:16
 msgid "Famille"
-msgstr ""
+msgstr "Family"
 
 #: pages/tags.py:17
 msgid "Amitié"
-msgstr ""
+msgstr "Friendship"
 
 #: pages/tags.py:18
 msgid "Amour"
-msgstr ""
+msgstr "Love"
 
 #: pages/tags.py:19
 msgid "Confinement"
-msgstr ""
+msgstr "Containment"
 
 #: pages/tags.py:20
 msgid "Motivation"
-msgstr ""
+msgstr "Motivation"
 
 #: pages/tags.py:21
 msgid "Humour"
-msgstr ""
+msgstr "Humor"
 
 #: pages/tags.py:22
 msgid "Actualités"
-msgstr ""
+msgstr "Actualities"
 
 #: pages/tags.py:23
 msgid "Covid Positif"
-msgstr ""
+msgstr "Covid Positive"
 
 #: templates/pages/home.html:24
 msgid "Recherche"
-msgstr ""
+msgstr "Search"
 
 #: templates/pages/home.html:49
 msgid "Moi, pendant le confinement..."
-msgstr ""
+msgstr "Me, during the containment..."
 
 #: templates/pages/home.html:55
 msgid "J'écris la gazette!"
-msgstr ""
+msgstr "I write the gazette!"
 
 #: templates/pages/home.html:58
 msgid "Je suis..."
-msgstr ""
+msgstr "I am..."
 
 #: templates/pages/home.html:67
 msgid "Mon âge:"
-msgstr ""
+msgstr "My age:"
 
 #: templates/pages/home.html:79
 msgid "J'envoie!"
-msgstr ""
+msgstr "Send!"
 
 #: templates/pages/home.html:91
 msgid "Un humain"
-msgstr ""
+msgstr "A human being"
 
 #: templates/pages/home.html:91
 msgid "Ni vieux ni jeune"
-msgstr ""
+msgstr "Neither old nor young"
