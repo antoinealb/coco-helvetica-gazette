@@ -27,7 +27,9 @@ class HomePageView(ListView):
         context["ArticleCreate"] = ArticleCreate
 
         try:
-            context["writing_prompt"] = random.choice([s.text for s in WritingPrompt.objects.all()])
+            context["writing_prompt"] = random.choice(
+                [s.text for s in WritingPrompt.objects.all()]
+            )
         except IndexError:
             pass
 
@@ -54,7 +56,9 @@ class ByTagView(ListView):
         context["tags"] = Tag.objects.all()
 
         try:
-            context["writing_prompt"] = random.choice([s.text for s in WritingPrompt.objects.all()])
+            context["writing_prompt"] = random.choice(
+                [s.text for s in WritingPrompt.objects.all()]
+            )
         except IndexError:
             pass
 
