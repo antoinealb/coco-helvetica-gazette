@@ -20,31 +20,6 @@
             <a href="{% url 'home' %}" style="color: #212529;"><img class="img-fluid" src="{% static 'logo.png' %}" alt="Coco Helvetica Gazette" /></a>
         </div>
         <div class="card bg-light mr-sm-1 mb-3">
-            <div class="card-header">
-                {% trans 'Recherche' %}
-            </div>
-            <div class="card-body">
-            <div class="input-group mb-2 mr-sm-2">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">#</div>
-                </div>
-                <select class="form-control" onChange="window.location.href=this.value">
-                    {% for tag in tags %}
-                        <option value="{% url 'by_tag' tag.id %}">{{ tag }}</option>
-                    {% endfor %}
-                </select>
-            </div>
-            <div class="input-group mb-2 mr-sm-2">
-                <div class="input-group-prepend">
-                    <div class="input-group-text"><img src="{% static 'icons/calendar.svg' %}"
-                                                       alt="calendar image">
-                    </div>
-                </div>
-                <input type="text" class="form-control datepicker" placeholder={% now "d/m/Y" %}>
-            </div>
-            </div>
-        </div>
-        <div class="card bg-light mr-sm-1 mb-3">
             <div class="card-body">
                 <p class="card-text">{% trans "Moi, pendant le confinement..." %}</p>
                 <p class="card-text">
