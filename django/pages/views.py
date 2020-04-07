@@ -1,9 +1,10 @@
 from django.shortcuts import get_object_or_404, redirect
 from django.views.generic import ListView, DetailView, TemplateView
-from .models import TextTestimonial, Tag
+from .models import TextTestimonial, Tag, WritingPrompt
 from django.forms import ModelForm
 from . import telegram
 import re
+import random
 
 
 class AboutView(TemplateView):
@@ -24,6 +25,12 @@ class HomePageView(ListView):
         context = super().get_context_data(**kwargs)
         context["tags"] = Tag.objects.all()
         context["ArticleCreate"] = ArticleCreate
+
+        try:
+            context["writing_prompt"] = random.choice([s.text for s in WritingPrompt.objects.all()])
+        except IndexError:
+            pass
+
         return context
 
     def get_queryset(self):
@@ -45,6 +52,12 @@ class ByTagView(ListView):
         context = super().get_context_data(**kwargs)
         context["tag"] = get_object_or_404(Tag, pk=self.kwargs["pk"])
         context["tags"] = Tag.objects.all()
+
+        try:
+            context["writing_prompt"] = random.choice([s.text for s in WritingPrompt.objects.all()])
+        except IndexError:
+            pass
+
         return context
 
     def get_queryset(self):

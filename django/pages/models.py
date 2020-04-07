@@ -38,3 +38,10 @@ class TextTestimonial(models.Model):
         colors = ["bg-color-" + s for s in ["orange", "salmon", "marron"]]
         idx = crc32(self.text.encode()) % len(colors)
         return colors[idx]
+
+
+class WritingPrompt(models.Model):
+    text = models.TextField()
+
+    def __str__(self):
+        return self.text
