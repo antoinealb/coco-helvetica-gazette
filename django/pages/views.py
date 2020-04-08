@@ -55,13 +55,6 @@ class ByTagView(ListView):
         context["tag"] = get_object_or_404(Tag, pk=self.kwargs["pk"])
         context["tags"] = Tag.objects.all()
 
-        try:
-            context["writing_prompt"] = random.choice(
-                [s.text for s in WritingPrompt.objects.all()]
-            )
-        except IndexError:
-            pass
-
         return context
 
     def get_queryset(self):
