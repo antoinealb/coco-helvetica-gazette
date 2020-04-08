@@ -12,7 +12,7 @@
             <p class="lead">{{ object.text }}</p>
                 <small class="text-muted">
                     <p class="card-text">
-                        {{ object.creation_date }}, {{ object.get_author_gender_display|default:"Un humain" }}, {{ testimonial.author_age|default:"Ni vieux ni jeune" }}
+                        {{ object.creation_date }}, {{ object.get_author_gender_display|default:"Un humain" }}, {{ object.author_age|default:"Ni vieux ni jeune" }}
                     {% for tag in object.tags.all %}
                         <b><a href="{% url 'by_tag' tag.id %}">#{{ tag }}</a> </b>
                     {% endfor %}
