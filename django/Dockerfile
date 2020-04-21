@@ -2,13 +2,12 @@ FROM python:3.8
 
 RUN apt-get update && apt-get install -y gettext
 
-RUN pip install pipenv
-COPY Pipfile* /app/
-RUN cd /app && \
-    pipenv lock --requirements > requirements.txt && \
-    pip install -r requirements.txt
+COPY requirements.txt /app/requirements.txt
 
 WORKDIR /app
+
+RUN cd /app && \
+    pip install -r requirements.txt
 
 COPY locale /app/locale
 RUN django-admin compilemessages

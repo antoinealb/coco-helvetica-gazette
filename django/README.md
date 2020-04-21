@@ -32,7 +32,7 @@ Then open this link in your browser to see the project in action [http://127.0.0
 
 Unfortunately, this breaks django live reload, so you have to kill and start the server process for your changes outside the container to take effect.
 
-## Setup your project without Docker (not working at the moment!)
+## Setup your project without Docker
 Clone the repository
 
     git@github.com:antoinealb/coco-helvetica-gazette.git
@@ -41,13 +41,16 @@ Go into the `django` folder
 
     cd coco-helvetica-gazette/django
 
+Create a virtual environment
+    python3 -m venv env
+
+Activate it (needed every time you create a shell)
+    source env/bin/activate  # for bash users
+    source env/bin/activate.fish  # for fish users
+
 Install python dependencies
 
-    pipenv install
-
-Go into your virtual environment
-
-    pipenv shell
+    pip install -r requirements.txt
 
 Run the migrations
 
@@ -80,9 +83,15 @@ env_variables:
 
 and fill in the values with the chosen secrets.
 
-## Deploy static files to Google Cloud Storage
+## Deploy application to AppEngine
 
 ```python
+# Compiles translations
+python manage.py compilemessages
+
+# Copies static files (.js and .css)
 python manage.py collectstatic
-gsutil rsync -R static_out/ gs://coco-helvetica-gazette-static/static
+
+# Send the app to AppEngine
+gcloud app deploy
 ```

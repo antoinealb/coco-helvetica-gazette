@@ -150,11 +150,7 @@ LOCALE_PATHS = [os.path.join(BASE_DIR, "locale")]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-
-if os.getenv("GAE_INSTANCE"):
-    STATIC_URL = "https://storage.googleapis.com/coco-helvetica-gazette-static/static/"
-else:
-    STATIC_URL = "/static/"
+STATIC_URL = "/static/"
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static_out")
 
